@@ -9,8 +9,8 @@ const Movimentacao = sequelize.define( 'Movimentacao' ,{
   Movimentacao.associete = (models) => {
     Movimentacao.belongsTo(models.MovimentacaoDoClientes,
     {
-      foreignKey: 'idMovimentacao',
-      as: 'movimentacaoDoCliente'
+      foreignKey: 'id',
+      as: 'Movimentacoes'
     });
   }
 

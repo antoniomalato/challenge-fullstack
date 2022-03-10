@@ -6,14 +6,14 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   sequelize.associete = (models) => {
-    MovimentacaoDoCliente.belongsTo(models.Cliente,
+    MovimentacaoDoCliente.belongsTo(models.Clientes,
     {
       as: 'Clientes',
       through: MovimentacaoDoCliente,
       foreignKey: 'idCliente',
       otherKey: 'idMovimentacao'
     });
-    MovimentacaoDoCliente.belongsTo(models.Cliente,
+    MovimentacaoDoCliente.belongsTo(models.Movimentacoes,
       {
         as: 'Movimentacoes',
         through: MovimentacaoDoCliente,

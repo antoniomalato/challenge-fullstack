@@ -11,14 +11,14 @@ const removeClient = require('./src/controllers/cliente/removeClientController')
 
 const PORT = 3000;
 
+// Rotas de cliente --------------------------------
 app.post('/register', createClientController);
-
 app.get('/client', findAllClientController);
 app.get('/:client', findByName);
-
 app.put('/', updateClient);
-
 app.delete('/remove', removeClient);
+
+// Rotas de movimentações
 
 
 app.get('/', (req, res) => res.send('Hello World!'));
