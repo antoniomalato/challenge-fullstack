@@ -5,7 +5,7 @@ app.use(express.json());
 
 const createClientController = require('./src/controllers/cliente/createClientController');
 const findAllClientController = require('./src/controllers/cliente/findAllController');
-const findByName = require('./src/controllers/cliente/findByName');
+const findById = require('./src/controllers/cliente/findByName');
 const updateClient = require('./src/controllers/cliente/updateClientController');
 const removeClient = require('./src/controllers/cliente/removeClientController');
 
@@ -14,7 +14,7 @@ const PORT = 3000;
 // Rotas de cliente --------------------------------
 app.post('/register', createClientController);
 app.get('/client', findAllClientController);
-app.get('/:client', findByName);
+app.get('/client/:id', findById);
 app.put('/', updateClient);
 app.delete('/remove', removeClient);
 

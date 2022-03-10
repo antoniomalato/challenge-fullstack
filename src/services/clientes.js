@@ -5,9 +5,9 @@ const { schemaCliente } = require('../utils/joiValidate');
 //Cria os clientes-------------
 const createClient = async (cliente, numero, tipo, status, categoria) => {
   const { error } = schemaCliente.validate({ cliente, numero, tipo, status, categoria })
-  if(error) throw constructorError(400, message);
+  if(error) throw constructorError(400, 'Valores inválidos');
 
-  const create = await Cliente.create(cliente, numero, tipo, status, categoria);
+  const create = await Cliente.create({cliente, numero, tipo, status, categoria});
 
   return create
 };
@@ -16,8 +16,8 @@ const createClient = async (cliente, numero, tipo, status, categoria) => {
 const findClient = async () => await Cliente.findAll();
 
 //Busca o cliente pelo nome
-const findByName = async (cliente) => {
-  const find = await Cliente.findOne({where: cliente });
+const findById = async (id) => {
+  const find = await Cliente.findAll({where: {id: id} });
   
   if (!find ) throw constructorError(404, 'Nome inválido');
 
@@ -46,7 +46,7 @@ const removeCliente = async (id) => {
 module.exports = {
   createClient,
   findClient,
-  findByName,
+  findById,
   updateCliente,
   removeCliente,
 };
