@@ -1,24 +1,29 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('MovimentacaoDoClientes', {
-      idCliente: {
+      id: { 
+        allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      idCliente: {
+        foreignKey: true,
         type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         references: {
-          model: 'Cliente',
+          model: 'Clientes',
           key: 'id',
         },
       },
       idMovimentacao: {
-        primaryKey: true,
+        foreignKey: true,
         type: Sequelize.INTEGER,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
         references: {
-          model: 'Movimentacao',
+          model: 'Movimentacoes',
           key: 'id',
         },
       },
