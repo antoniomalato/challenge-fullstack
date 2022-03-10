@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/antoniomalato/challenge-fullstack#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "joi": "^17.6.0",
     "mysql2": "^2.3.3",
