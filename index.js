@@ -15,8 +15,8 @@ const PORT = 3000;
 app.post('/register', createClientController);
 app.get('/client', findAllClientController);
 app.get('/client/:id', findById);
-app.put('/', updateClient);
-app.delete('/remove', removeClient);
+app.put('/client/update', updateClient);
+app.delete('/remove/:id', removeClient);
 
 // Rotas de movimentações
 

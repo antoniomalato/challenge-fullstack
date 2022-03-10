@@ -26,16 +26,18 @@ const findById = async (id) => {
 
 // Atualiza o cliente-------------------
 const updateCliente = async (id, cliente, numero, tipo, status, categoria) => {
-  const findClient = await Cliente.findByPk({where: { id: id } });
+  const findClient = await Cliente.findAll({where: { id: id } });
 
   if(!findClient) throw constructorError(404, 'Id inválido!')
 
   return await Cliente.update({ cliente, numero, tipo, status, categoria }, { where: {id: id } })
+  // const update = await Cliente.findAll({where: { id: id }});
+  // return update;
 }
 
 // Remove o client----------------
 const removeCliente = async (id) => {
-  const findClient = await Cliente.findByPk({where: { id: id } });
+  const findClient = await Cliente.findAll({where: { id: id } });
 
   if(!findClient) throw constructorError(404, 'Id inválido!');
 
