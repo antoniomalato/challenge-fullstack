@@ -15,11 +15,21 @@ const PORT = 3000;
 app.post('/register', createClientController);
 app.get('/client', findAllClientController);
 app.get('/client/:id', findById);
-app.put('/client/update', updateClient);
+app.put('/client/update/:id', updateClient);
 app.delete('/remove/:id', removeClient);
 
-// Rotas de movimentações
 
+const findAllMoviment = require('./src/controllers/movimentacao/findAllController');
+const findByIdMoviment = require('./src/controllers/movimentacao/findById');
+
+
+
+// Rotas de movimentações
+app.post('/create');
+app.get('/moviment', findAllMoviment);
+app.get('/moviment/:id', findByIdMoviment);
+app.put('/moviment/update/:id');
+app.delete('/remove/:id');
 
 app.get('/', (req, res) => res.send('Hello World!'));
 app.listen(PORT, () => console.log(`Example app listening on PORT ${PORT}!`));
