@@ -20,7 +20,7 @@ module.exports = {
       }
     },
     {
-      timestamps: false,
+      // timestamps: false,
       tableName: 'Movimentacoes'
     });
   },

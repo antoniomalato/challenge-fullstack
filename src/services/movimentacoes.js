@@ -3,11 +3,11 @@ const constructorError = require('../utils/constructorError');
 const { schemaMovimentacao } = require('../utils/joiValidate');
 
 // Criação de movimentação--------------
-const createMov = async (tipo) => {
+const createMov = async ( tipo, inicio, fim ) => {
   const { error } = schemaMovimentacao.validate({ tipo })
-  if (error) throw constructorError(404, message);
+  if (error) throw constructorError(404, 'Entrada inválida');
 
-  const create = await Movimentacao.create({ tipo });
+  const create = await Movimentacao.create({ tipo, inicio, fim  });
 
   return create;
 ;}
@@ -24,7 +24,7 @@ const findById = async (id) => {
 };
 
 // Atualiza da movimentação-------------------
-const updateMov = async (id) => {
+const updateMov = async (id, tipo) => {
     const findClient = await Movimentacao.findAll({where: { id: id } });
 
     if(!findClient) throw constructorError(404, 'Id inválido!')
@@ -34,7 +34,7 @@ const updateMov = async (id) => {
 
 // Remover movimentação----------------
 const removeMov = async (id) => {
-   const findClient = await Movimentacao.findByPk({where: { id: id } });
+   const findClient = await Movimentacao.findAll({where: { id: id } });
 
     if(!findClient) throw constructorError(404, 'Id inválido!');
 

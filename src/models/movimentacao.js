@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
 const Movimentacao = sequelize.define( 'Movimentacao' ,{
     tipo: DataTypes.STRING,
-    // inicio: DataTypes.DATE,
-    // fim: DataTypes.DATE,
+    inicio: DataTypes.DATE,
+    fim: DataTypes.DATE,
   }, {
     tableName: 'Movimentacoes',
     timestamps: false
