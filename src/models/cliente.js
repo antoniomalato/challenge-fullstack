@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, 
   {
     timestamps: false,
-    modelName: 'Clientes',
+    tableName: 'Clientes',
   });
 
   Cliente.associete = (models) => {

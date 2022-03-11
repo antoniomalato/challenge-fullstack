@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Movimentacoes', {
@@ -21,7 +20,7 @@ module.exports = {
       }
     },
     {
-      timestamps: false,
+      // timestamps: false,
       tableName: 'Movimentacoes'
     });
   },

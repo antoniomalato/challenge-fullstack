@@ -1,8 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
 const Movimentacao = sequelize.define( 'Movimentacao' ,{
-    tipo: DataTypes.STRING
+    tipo: DataTypes.STRING,
+    inicio: DataTypes.DATE,
+    fim: DataTypes.DATE,
   }, {
-    modelName: 'Movimentacoes',
+    tableName: 'Movimentacoes',
     timestamps: false
   });
 

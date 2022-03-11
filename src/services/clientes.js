@@ -1,4 +1,4 @@
-const { Cliente } = require('../models/index');
+const { Cliente, MovimentacaoDoCliente, Movimentacao } = require('../models/index');
 const constructorError = require('../utils/constructorError');
 const { schemaCliente } = require('../utils/joiValidate');
 
@@ -44,6 +44,29 @@ const removeCliente = async (id) => {
   return await Cliente.destroy({ where: { id: id }});
 }
 
+// const findInfoMov = async (id) => {
+//   const findClient = await Cliente.findAll(
+//     {
+//       where: { id: id },
+//       include: [
+//         {
+//           model: Movimentacao,
+//           as: 'id',
+//           // through: Movimentacao
+//           // include: [
+//           //   {
+//           //     model: Movimentacao,
+//           //     as: 'idMovimentacoes'
+//           //   }
+//           // ]
+//         }
+//       ]
+//     })
+
+//     if (!findClient) throw constructorError(404, 'Invalid id');
+
+//     return findClient;
+// }
 
 module.exports = {
   createClient,
@@ -51,4 +74,5 @@ module.exports = {
   findById,
   updateCliente,
   removeCliente,
+  // findInfoMov,
 };

@@ -4,10 +4,10 @@ const { HOSTNAME, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DBNAME } = process.env;
 
 module.exports = {
   "development": {
-    "username": MYSQL_USER,
-    "password": MYSQL_PASSWORD,
-    "database": MYSQL_DBNAME,
-    "host": HOSTNAME,
+    "username": MYSQL_USER || "root",
+    "password": MYSQL_PASSWORD || null,
+    "database": MYSQL_DBNAME || "database",
+    "host": HOSTNAME || "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
