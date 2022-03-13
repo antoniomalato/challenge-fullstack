@@ -19,7 +19,7 @@ app.post('/register', createClientController);
 app.get('/client', findAllClientController);
 app.get('/client/:id', findById);
 app.put('/client/update/:id', updateClient);
-app.delete('/remove/:id', removeClient);
+app.delete('/client/remove/:id', removeClient);
 // -------------------------------------------------
 
 const findAllMoviment = require('./src/controllers/movimentacao/findAllController');
