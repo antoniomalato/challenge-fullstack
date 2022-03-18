@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = 3001;
 
 const createClientController = require('./src/controllers/cliente/createClientController');
 const findAllClientController = require('./src/controllers/cliente/findAllController');
@@ -19,7 +19,7 @@ app.post('/register', createClientController);
 app.get('/client', findAllClientController);
 app.get('/client/:id', findById);
 app.put('/client/update/:id', updateClient);
-app.delete('/remove/:id', removeClient);
+app.delete('/client/remove/:id', removeClient);
 // -------------------------------------------------
 
 const findAllMoviment = require('./src/controllers/movimentacao/findAllController');
