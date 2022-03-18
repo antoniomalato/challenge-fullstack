@@ -1,10 +1,17 @@
+import { Switch, Route } from 'react-router-dom';
+import FormClient from './pages/FormClient';
+import FormMoviment from './pages/FormMoviment'
+import Home from './pages/Home';
+import ClientList from './pages/ClientList';
+
 function App() {
   return (
-    <div className="">
-      <header className="">
-        <p>Iniciando frontend</p>
-      </header>
-    </div>
+    <Switch>
+      <Route exact path="/" component={ Home }/>
+      <Route exact path="/register" component={ FormClient } />
+      <Route exact path="/create" component={ FormMoviment } />
+      <Route exact path="/client" component={ ClientList } />
+    </Switch>
   );
 }
 

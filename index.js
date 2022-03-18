@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = 3001;
 
 const createClientController = require('./src/controllers/cliente/createClientController');
 const findAllClientController = require('./src/controllers/cliente/findAllController');
